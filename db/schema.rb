@@ -16,13 +16,9 @@ ActiveRecord::Schema.define(version: 2021_05_06_032417) do
     t.date "training_date", null: false
     t.string "part", null: false
     t.string "training", null: false
-    t.integer "set", null: false
-    t.string "weight", null: false
+    t.integer "weight"
     t.integer "rep", null: false
-    t.integer "protein"
-    t.integer "fat"
-    t.integer "carbo"
-    t.text "memo"
+    t.integer "rm"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -33,12 +29,13 @@ ActiveRecord::Schema.define(version: 2021_05_06_032417) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", default: "", null: false
-    t.date "birth_date", null: false
-    t.string "career", default: "", null: false
-    t.text "aim", null: false
+    t.date "birth_date"
+    t.string "career"
+    t.text "aim"
     t.text "introduction"
     t.integer "height"
     t.integer "weight"
+    t.string "image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
