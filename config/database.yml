@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: RMate_production
-  username: RMate
-  password: <%= ENV['RMATE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
