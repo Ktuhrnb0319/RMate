@@ -1,0 +1,21 @@
+<header class='top-page-header'>
+
+  <div class="header-left-content">
+  <%= link_to "Start training","#" ,id: :"training-icon"%>
+  </div>
+
+  <div class="header-center-content">
+  <div class="top-icon">RMate<span class="c">©︎</span></div>
+  </div>
+
+  <div class="header-right-content">
+  <div id="datetime"><%= Date.current.strftime('%Y/%m/%d/%a')%><span id='real-time'></span></div>
+  <% if @user.image? %>
+  <div class="user-icon"><%= link_to (image_tag @user.image.url,class: :"user_image" ,size: '100x100'),user_path(current_user.id) %></div>
+  <% else %>
+  <div class="user-icon"><%= link_to (image_tag "download20210506014736.png",class: :"user_image" ,size: '100x100'),user_path(current_user.id) %></div>
+   <% end %>
+  </div>
+    
+</header>
+

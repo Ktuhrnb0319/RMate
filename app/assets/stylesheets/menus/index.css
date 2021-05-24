@@ -1,0 +1,105 @@
+.wrapper{
+  display: flex;
+}
+.side-bar{
+  background-color: #0E2F56;
+  width: 180px;
+  height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+
+}
+.main{
+  background-color: #0E2F56;
+  height: calc(100vh - 140px);
+  width: calc(100vw - 180px);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+.side-graph{
+  border: solid black;
+}
+
+.icon-text{text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.training-image{
+  display: none;
+}
+
+
+
+/*--ログイン前-->*/
+
+
+.main2{
+  background-color: #0E2F56;
+  height:100vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
+#logo-image-home{
+  margin-left: 410px;
+}
+
+.home-low-content{
+  display: flex;
+  justify-content: center;
+}
+
+.home-user-contents {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:  80px;
+  width: 33%;
+}
+
+
+.sign-up {
+  text-decoration: none;
+  color: #fff;
+}
+
+.log-in {
+  text-decoration: none;
+  color: #fff;
+}
+
+.TextTyping {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 3rem;
+  letter-spacing: .1em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.TextTyping span {
+  display: none;
+}
+
+.TextTyping::after {
+  content: "|";
+  animation: typinganime .8s ease infinite;
+}
+
+@keyframes typinganime{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+

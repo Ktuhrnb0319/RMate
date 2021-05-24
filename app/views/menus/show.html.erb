@@ -1,0 +1,54 @@
+<%= render "shared/second_header" %>
+<div class="show-main">
+<div class="show-wrapper">
+  <ul class="tab">
+    <li><a href="#chest">Chest</a></li>
+    <li><a href="#arms">Arms</a></li>
+    <li><a href="#abs">Abs</a></li>
+    <li><a href="#back">Back</a></li>
+    <li><a href="#legs">Legs</a></li>
+    <li><a href="#shoulders">Shoulders</a></li>
+    <li><a href="#aerobic">Aerobic</a></li>
+    <li><a href="#other">Other</a></li>
+  </ul>
+
+    <div id="chest" class="area">
+      <h2>Chest</h2>
+      <%= render partial: "shared/menu", collection: @user.menus.where(part: "Chest").order(training_date: :desc) %>
+    <!--/area--></div>
+    <div id="arms" class="area">
+      <h2>Arms</h2>
+      
+        <%= render partial: "shared/menu", collection: @user.menus.where(part: "Arms").order(training_date: :desc) %>
+     
+    <!--/area--></div>
+    <div id="abs" class="area">
+      <h2>Abs</h2>
+      
+        <%= render partial: "shared/menu", collection: @user.menus.where(part: "Abs").order(training_date: :desc) %>
+      
+    <!--/area--></div>
+    <div id="back" class="area">
+      <h2>Back</h2>
+     <%= render partial: "shared/menu", collection: @user.menus.where(part: "Back").order(training_date: :desc) %>
+      
+    <!--/area--></div>
+    <div id="legs" class="area">
+      <h2>Legs</h2>
+      <%= render partial: "shared/menu", collection: @user.menus.where(part: "Legs").order(training_date: :desc) %>
+    <!--/area--></div>
+    <div id="shoulders" class="area">
+      <h2>Shoulders</h2>
+      <%= render partial: "shared/menu", collection: @user.menus.where(part: "Shoulders").order(training_date: :desc) %>
+    <!--/area--></div>
+    <div id="aerobic" class="area">
+      <h2>Aerobic</h2>
+      <%= render partial: "shared/menu", collection: @user.menus.where(part: "Aerobic").order(training_date: :desc) %>
+    <!--/area--></div>
+    <div id="other" class="area">
+      <h2>Other</h2>
+      <%= render partial: "shared/menu", collection: @user.menus.where(part: "Other").order(training_date: :desc) %>
+    <!--/area--></div>
+<!--wrapper--></div>
+</div>
+<%= render "shared/footer" %>

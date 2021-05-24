@@ -1,0 +1,19 @@
+<header class='top-page-header2'>
+
+  <div class="header-left-content2">
+  <%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image",id: :""%>
+  </div>
+
+  <div class="header-center-content2">
+  </div>
+
+  <div class="header-right-content2">
+  <div id="datetime"><%= Date.current.strftime('%Y/%m/%d/%a')%><span id='real-time'></span></div>
+  <% if @user.image? %>
+  <div class="user-icon"><%= link_to (image_tag @user.image.url,class: :"user_image" ,size: '100x100'),user_path(current_user.id) %></div>
+  <% else %>
+  <div class="user-icon"><%= link_to (image_tag "download20210506014736.png",class: :"user_image" ,size: '100x100'),user_path(current_user.id) %></div>
+  <% end %>
+  </div>
+    
+</header>
