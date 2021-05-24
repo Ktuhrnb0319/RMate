@@ -4,10 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :menus
+  accepts_nested_attributes_for :menus
+  mount_uploader :image, ImageUploader
 
-  validates :nickname, presence: true
-  validates :birth_date, presence: true
-  validates :carrer, presence: true
-  validates :aim, presence: true
-
+  validates :nickname, presence: true,length: { maximum: 12 }
 end

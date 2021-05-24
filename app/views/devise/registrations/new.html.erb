@@ -1,57 +1,48 @@
-<div class="main">
-  <div class="inner">
-    <div class="form__wrapper">
-      <h2 class="page-heading">ユーザー新規登録</h2>
+<header class='top-page-header2'>
+<%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image"%>
+</header>
 
-        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+<div class="form-main">
+<div class="form">
 
-        <div class="field">
-          <%= f.label :email, "メールアドレス" %><br />
-          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
-        </div>
+<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+<%= render partial:'shared/error_messages', locals:{ model: f.object} %>
+<form action="#">
+  <div class="text-input">
+    <%= f.label :nickname, "Nickname(最大12文字)" %>
+    <%= f.text_field :nickname, id:"user_nickname", autofocus: true, autocomplete: "nickname" %>
+    <span class="separator"> </span><br />
+  </div>   
 
-        <div class="field">
-          <%= f.label :password, "パスワード (6文字以上)" %><br />
-          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
-        </div>
+  <div class="text-input">
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+    <span class="separator"> </span><br />
+  </div>  
+  
+    <div class="text-input">
+    <%= f.label :password, "Password (6文字以上)" %>
+    <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+    <span class="separator"> </span><br />
+  </div> 
 
-        <div class="field">
-          <%= f.label :password_confirmation, "パスワード再入力" %><br />
-          <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password"%>
-        </div>
+  <div class="text-input">
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password"%>
+    <span class="separator"> </span><br />
+  </div> 
 
-        <div class="field">
-          <%= f.label :nickname, "ユーザー名" %><br />
-          <%= f.text_field :nickname, id:"user_name" %>
-        </div>
+  <div class="form-bottom">
+    <input type="submit" id="submit" value="Submit"  />
 
-        <div class="field">
-          <%= f.label :career, "トレーニング歴" %><br />
-          <%= f.text_field :career,  id:"user_career" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :aim, "目標（例 ○月までに○kg痩せる！）" %><br />
-          <%= f.text_area :aim, class: :form__text, id:"user_aim" %>
-        </div>
-
-        <div class="field">
-          <%= f.label :introduction, "自己紹介" %><br />
-          <%= f.text_area :introduction, class: :form__text, id:"user_introduction" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "新規登録", class: :form__btn  %>
-        </div>
-      <% end %>
+  
+  <a href= / class="top-src">Top Page</a>
     </div>
-  </div>
+</form>  
+  <% end %>
+  
+
+</div>
 </div>
 
-t.string :nickname,           null: false, default: ""
-      t.date   :birth_date,         null: false
-      t.string :career,    null:false, default: ""
-      t.text :aim,    null:false
-      t.text :introduction
-      t.integer :height
-      t.integer :weight
+<%= render "shared/footer" %>

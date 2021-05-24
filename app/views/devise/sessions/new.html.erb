@@ -1,26 +1,37 @@
-<h2>Log in</h2>
+<header class='top-page-header2'>
+<%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image"%>
+</header>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="form-main">
+<div class="form">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<%= form_with model: @user, url: user_session_path, local: true do |f| %>
+<form action="#">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class="text-input">
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+    <span class="separator"> </span><br />
+  </div> 
+  
+    <div class="text-input">
+    <%= f.label :password, "Password (6文字以上)" %>
+    <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+    <span class="separator"> 
+  </div> 
+
+  <div class="form-bottom">
+    <input type="submit" id="submit" value="Submit"  />
+
+  
+  <a href= / class="top-src">Top Page</a>
     </div>
+</form>  
   <% end %>
+  
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+</div>
+</div>
 
-<%= render "devise/shared/links" %>
+
+

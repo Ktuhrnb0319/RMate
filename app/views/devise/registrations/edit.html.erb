@@ -1,43 +1,104 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<header class='top-page-header2'>
+<%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image"%>
+</header>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="form-main">
+<div class="form">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+<%= render "devise/shared/error_messages", resource: resource %>
+<form action="#">
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+   <div class="text-input">
+   <% if @user.image? %>
+      <%= image_tag @user.image.url ,:size => '200x200',class: "user_image" %>
+   <% else %>
+      <%= image_tag "download20210506014736.png", :size => '200x200',class: "user_image" %>
+   <% end %>
+      <button type="button" class="user_image_form">
+         <%= f.file_field :image, class:"user_image_form",accept: 'image/jpeg,image/gif,image/png' %>
+      </button>
+      </div>   <br />
+
+
+  <div class="text-input">
+    <%= f.label :nickname, "Nickname" %>
+    <%= f.text_field :nickname, id:"user_nickname", autofocus: true, autocomplete: "nickname" %>
+    <span class="separator"> </span><br />
+  </div>   
+
+  <div class="text-input">
+    <%= f.label :email, "Email" %>
+    <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+    <span class="separator"> </span><br />
+  </div>  
+  
+    <div class="text-input">
+    <%= f.label :password, "NewPassword (6文字以上)" %>
+    <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :password_confirmation, "Password Confirmation" %>
+    <%= f.password_field :password_confirmation, id:"user_password_confirmation", autocomplete: "new-password"%>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :birth_date, "生年月日" %>
+    <%= f.date_select :birth_date, use_month_numbers: true, start_year: 1970, end_year: Time.now.year, prompt:"--",id:"user_birth_date", autocomplete: "bday" %>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :career, "トレーニング歴" %>
+    <%= f.text_field :career, id:"user_career",size: 10 %>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :aim, "目標・目的" %>
+    <%= f.text_area :aim, id:"user_aim",size: "30x5" %>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :introduction, "自己紹介" %>
+    <%= f.text_area :introduction, id:"user_introduction",size: "30x5" %>
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :height, "身長" %>
+    <%= f.text_field :height, id:"user_height",size: 6 %>cm
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :weight, "体重" %>
+    <%= f.text_field :weight, id:"user_weight",size: 6 %>kg
+    <span class="separator"> </span><br />
+  </div> 
+
+  <div class="text-input">
+    <%= f.label :current_password, "現在のPassword" ,class:"must"%>
+    <%= f.password_field :current_password, id:"user_current_password", autocomplete: "current-password",required: true %>
+    <span class="separator"> </span><br />
+  </div> 
+
+
+
+  <div class="form-bottom">
+    <input type="submit" id="update-btn" value="Update"  />
+
+  
+  <a href= / class="top-src">Top Page</a>
+    </div>
+</form>  
   <% end %>
+  
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
+</div>
+<%= render "shared/footer" %>

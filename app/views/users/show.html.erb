@@ -1,0 +1,54 @@
+<header class='top-page-header2'>
+<%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image"%>
+</header>
+
+<div class="user-wrapper">
+
+<div class="user-main-left">
+<div class="show-left-contents">
+<% if @user.image? %>
+<%= image_tag @user.image.url ,:size => '300x300',class: "user_image" %>
+<% else %>
+<%= image_tag "download20210506014736.png" ,:size => '300x300',class: "user_image" %>
+<% end %>
+<div id="show-name"><%= @user.nickname%></div>
+
+
+
+
+    <ul class='user-ff'>
+      <li><%= link_to 'Follow',"#", class: "follow" %></li>
+      <li><%= link_to 'Followers', "#", class: "followers" %></li>
+    </ul>
+</div>
+</div>
+
+<div class="user-main-right">
+<div class="show-right-contents">
+
+<div class='user-info'>
+  <p class="info-contents">トレーニング歴</p>
+  <div class="user-content"><%= @user.career %>
+  </div><br />
+  <div class="info-contents">目標・目的</div>
+  <div class="user-content"><%= @user.aim  %>
+  </div><br />
+  <div class="info-contents">自己紹介</div>
+  <div class="user-content"><%= @user.introduction %>
+  </div><br />
+</div>
+
+
+
+
+<% if current_user.id == @user.id %>
+<%= link_to "編集する", edit_user_registration_path,id: "link-edit"%>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete,id: "log_out"%>
+<% end %>
+</div>
+</div>
+
+
+
+</div>
+<%= render "shared/footer" %>
