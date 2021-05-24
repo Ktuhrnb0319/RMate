@@ -1,0 +1,87 @@
+<div class="new-header">
+
+<%= link_to (image_tag 'logo.png' ,size: '140x140'),"/",class: :"logo-image"%>
+
+<div class="menu-title">
+<%= @form.part %> training
+</div>
+
+<div class="new-header-right">
+</div>
+</div>
+
+
+<div class="new-training">
+
+<div class='date-stopwatch'><%= Date.current.strftime('%Y/%m/%d/%a')%>
+
+<div class="stopwatch_wrapper">
+    <div class="display">
+      <span id="hours" class="time">00</span>
+      <span id="minutes" class="time">00</span>
+      <span id="seconds" class="time">00</span>
+      <span id="milli_seconds" class="time">000</span>
+    </div>
+
+    <div class="buttons">
+      <button class="button" id="start">start</button>
+      <button class="button" id="stop" disabled>stop</button>
+      <button class="button" id="reset" disabled>reset</button>
+    </div>
+</div>
+
+</div>
+
+
+<%= form_with model: @form,url: menus_path, method: :post,local: true do |f|%>
+<%= render partial:'shared/error_messages', locals:{ model: f.object} %>
+
+<%= f.fields_for :menus do |i|%>
+<div class="box blur">
+<div class="menu-forms">
+  <div class="menu-form">
+    <%= i.hidden_field :training_date , value: Date.current.strftime('%Y/%m/%d/%a')%>
+  </div>
+
+  <div class="menu-form">
+    <%= i.label :training, "種目",class:"must" %><br />
+    <%= i.text_field :training,id:"menu_training",size: 16  %>
+  </div>
+
+  <div class="menu-form">
+    <%= i.label :weight, "重量" %><br />
+    <%= i.number_field :weight,class: "menu_weight"%>kg  <%#,required: true%>
+  </div>
+
+  <div class="menu-form">
+    <%= i.label :rep, "rep",class:"must" %><br />
+    <%= i.number_field :rep,class: "menu_rep"  %>回 <%#,required: true%>
+  </div>
+
+  <div class="menu-form" id="rm-form">
+    <%= i.label :rm, "1RM" %><br />
+    <%= i.number_field :rm,class: "max-rm",readonly: true %>kg
+  </div>
+
+  
+
+  <div class="menu-form">
+    <%= i.hidden_field :part ,:value => @form.part, id:"menu_part" %>
+  </div>
+
+  <div class="menu-form">
+    <%= i.hidden_field :user_id ,:value => current_user.id, id:"menu_user_id" %>
+  </div>
+  
+  </div>
+  
+  </div>
+<% end %>
+<div class="menu-submit">
+    <button type="submit" class="record-btn">Record training!</button>
+  </div>
+<% end %>
+
+  </div>
+  <%= render "shared/footer" %>
+  

@@ -1,0 +1,67 @@
+<% if user_signed_in? %>
+<%= render "shared/header" %>
+<div class="wrapper">
+<div class="side-bar">
+<div class='side-graph'>
+<%= link_to (image_tag 'noun_Graph_2987891.png', size: '120x120'),menu_path(current_user.id) %><p class="icon-text">Training</p>
+</div>
+<div class='side-graph'>
+<%= link_to image_tag 'noun_chart_3917607.png', size: '120x120'%><p class="icon-text">Weight</p>
+</div>
+<div class='side-graph'>
+<%= link_to image_tag 'noun_Recipe Book_82545.png',size: '120x120' %><p class="icon-text">Meal</p>
+</div>
+</div>
+
+<div class="main">
+
+<div class='training-image'>
+<%= link_to (image_tag 'noun_Bench Press_83592.png',size: '200x200'),new_menu_path(part: 'Chest')%><p class="icon-text">Chest</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_workout_2110109.png', size: '200x200'),new_menu_path(part: 'Arms')%><p class="icon-text">Arms</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_Artistic gymnastic_2110033.png', size: '200x200'),new_menu_path(part: 'Abs')%><p class="icon-text">Abs</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_muscle strengthening_2110032.png', size: '200x200'),new_menu_path(part: 'Back')%><p class="icon-text">Back</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_stretching body_2110031.png', size: '200x200'),new_menu_path(part: 'Legs')%><p class="icon-text">Legs</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_workout_2110024.png', size: '200x200'),new_menu_path(part: 'Shoulders')%><p class="icon-text">Shoulders</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_treadmill workout_2110018.png', size: '200x200'),new_menu_path(part: 'Aerobic')%><p class="icon-text">Aerobic</p>
+</div>
+<div class='training-image'>
+<%= link_to (image_tag 'noun_workout_2216254.png', size: '200x200'),new_menu_path(part: 'Other')%><p class="icon-text">Other</p>
+</div>
+
+
+
+<!--タイムライン機能実装後表示-->
+
+</div>
+
+
+</div>
+<%= render "shared/footer" %>
+<% else %>
+
+<!--ログイン前-->
+<div class="main2">
+<p class="TextTyping">Welcome to RMate!</p>
+<%= image_tag 'logo.png' ,size: '600x600',id: :"logo-image-home" %>
+</div>
+
+<div class="home-low-content">
+<ul class='home-user-contents'>
+      <li><%= link_to '新規登録',new_user_registration_path , class: "sign-up" %></li>
+      <li><%= link_to 'ログイン', user_session_path, class: "log-in" %></li>
+    </ul>
+    </div>
+<%= render "shared/footer" %>
+    <% end %>

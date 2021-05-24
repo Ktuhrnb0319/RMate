@@ -1,0 +1,17 @@
+<ul>
+<li>
+<div class="list-content"><%=menu.training_date%></div> 
+<div class="list-content" id="list-training"><%=menu.training%></div>
+<% if  menu.weight.present?%>
+<div class="list-content"><%=menu.weight%>kg</div>
+<% else %>
+<div class="list-content"></div>
+<% end %>
+<div class="list-content"><%=menu.rep%>rep</div>
+<% if  menu.rm.present?%>
+<div class="list-content">1RM <%=menu.rm%>kg</div>
+<% else %>
+<div class="list-content"></div>
+<% end %>
+</li>
+</ul>
