@@ -46,6 +46,10 @@
 # 本番環境
 [RMate](http://18.177.171.145)
 
+BASIC認証
+- ID admin
+- Pass 2222
+
 ログイン情報（テスト用）
 - Eメール :sample@mail.com
 - パスワード testtest
