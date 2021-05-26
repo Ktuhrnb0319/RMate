@@ -209,5 +209,5 @@ VSCode
 ### Association
 - belongs_to :user
 
-##ER図
-<img src="RMate.drawio.png" width="320">
+## ER図
+<img src="RMate.drawio.png" width="500">
