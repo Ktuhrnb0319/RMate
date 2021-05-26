@@ -213,8 +213,10 @@ VSCode
 <img src="RMate.drawio.png" width="500">
 
 # ローカルでの動作方法  
+以下の手順でローカル環境で動作できます。  
 % git clone https://github.com/Ktuhrnb0319/RMate.git  
 % cd RMate  
 % bundle install  
 % yarn install  
+  
 ※ railsはバージョン6.0.0を利用しております。
