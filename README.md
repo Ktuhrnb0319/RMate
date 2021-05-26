@@ -123,6 +123,7 @@ RMateを利用することで初めての方でもトレーニングやフィッ
 
 
 # DEMO
+[![Image from Gyazo](https://i.gyazo.com/acfd69da29167979d4efdff4f35cf26b.gif)](https://gyazo.com/acfd69da29167979d4efdff4f35cf26b)
 # 工夫した点
 # 使用技術
 # 課題・今後実装したい機能
