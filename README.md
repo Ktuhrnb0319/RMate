@@ -123,7 +123,29 @@ RMateを利用することで初めての方でもトレーニングやフィッ
 
 
 # DEMO
+- ### トップページ
 [![Image from Gyazo](https://i.gyazo.com/acfd69da29167979d4efdff4f35cf26b.gif)](https://gyazo.com/acfd69da29167979d4efdff4f35cf26b)
+jQueryを用いてタイピング風にメッセージが表示される仕様です。  
+- ### 新規登録・ログイン画面  
+[![Image from Gyazo](https://i.gyazo.com/be91d5a19062b1757b407dab5185b4f0.gif)](https://gyazo.com/be91d5a19062b1757b407dab5185b4f0)
+[![Image from Gyazo](https://i.gyazo.com/92ec8350d41fc52cb932a5737a5a4a99.gif)](https://gyazo.com/92ec8350d41fc52cb932a5737a5a4a99)
+[![Image from Gyazo](https://i.gyazo.com/e1ef8ada6acf77d6c2cdaf5844bc4191.gif)](https://gyazo.com/e1ef8ada6acf77d6c2cdaf5844bc4191)
+必要な項目を入力するとマイページに遷移し、誤った情報ではエラーメッセージが表示されます。  
+- ### トレーニング記録画面
+[![Image from Gyazo](https://i.gyazo.com/3f40dd122678742683ba1c941cf57b6e.gif)](https://gyazo.com/3f40dd122678742683ba1c941cf57b6e)
+Start trainingをクリックすると部位ごとのアイコンが表示されそれぞれの記録画面に遷移できます。  
+[![Image from Gyazo](https://i.gyazo.com/4ef3c4f3f2e6b98182d333b349f3de9e.gif)](https://gyazo.com/4ef3c4f3f2e6b98182d333b349f3de9e)
+Record training!をクリックするとトレーニングが保存され詳細画面で一覧表示されます。  
+[![Image from Gyazo](https://i.gyazo.com/ef6bee1dab300320b94404ef3105b448.gif)](https://gyazo.com/ef6bee1dab300320b94404ef3105b448)
+重量とrepを共に入力すると自動で1RMが計算されます。  
+[![Image from Gyazo](https://i.gyazo.com/e9420334a382873e2faa07f28c5b1fad.gif)](https://gyazo.com/e9420334a382873e2faa07f28c5b1fad)
+トレーニング詳細画面では部位ごとに記録したトレーニングが表示されます。
+- ### ユーザー編集機能
+[![Image from Gyazo](https://i.gyazo.com/ddbdf73e77da510a7fa3394bc6b85401.gif)](https://gyazo.com/ddbdf73e77da510a7fa3394bc6b85401)
+マイページ右上のアイコンからユーザー詳細画面に遷移でき、編集画面にも遷移できます。  
+[![Image from Gyazo](https://i.gyazo.com/a259d4b63b5613d464a361bb9b18d197.gif)](https://gyazo.com/a259d4b63b5613d464a361bb9b18d197)
+必要な項目を入力してUpdateをクリックすると情報が更新されユーザー詳細ページに反映されます。
+
 # 工夫した点
 # 使用技術
 # 課題・今後実装したい機能
