@@ -5,7 +5,7 @@
 
 # アプリケーション概要
 ### アプリケーションロゴ
-<img src="app/assets/images/logo.png" width="100px">
+<img src="app/assets/images/logo.png" width="320">
 
 
 ### アプリ名の由来
