@@ -211,3 +211,10 @@ VSCode
 
 ## ER図
 <img src="RMate.drawio.png" width="500">
+
+# ローカルでの動作方法  
+% git clone https://github.com/Ktuhrnb0319/RMate.git  
+% cd RMate  
+% bundle install  
+% yarn install  
+※ railsはバージョン6.0.0を利用しております。
