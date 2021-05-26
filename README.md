@@ -5,7 +5,8 @@
 
 # アプリケーション概要
 ### アプリケーションロゴ
-![画像名](app/assets/images/logo.png)
+<img src="app/assets/images/logo.png" width="100px">
+
 
 ### アプリ名の由来
 - #### 1RMを伸ばしていく事をサポートするアプリにしたいという思い
