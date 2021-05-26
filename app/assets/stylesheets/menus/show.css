@@ -90,3 +90,9 @@ a{
   padding: 10px; 
   border-bottom: 1px solid  ;
 }
+
+.chart{
+  width:80%;
+  height: 200px;
+  background-color:#0E2F56;
+}

@@ -23,11 +23,17 @@ $('.tab a').on('click', function() {
   return false;
 });
 
+$('.tab li:first-of-type').addClass("active"); 
+$('.area:first-of-type').addClass("is-active"); 
+var hashName = location.hash; 
+GethashID (hashName);
+
+//-------------------------------------------グラフ------//
 
 
+//------------------------------------------------グラフ-------//
 
-    $('.tab li:first-of-type').addClass("active"); 
-    $('.area:first-of-type').addClass("is-active"); 
-  var hashName = location.hash; 
-  GethashID (hashName);
+
 });
+
+

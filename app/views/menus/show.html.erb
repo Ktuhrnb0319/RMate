@@ -14,7 +14,9 @@
 
     <div id="chest" class="area">
       <h2>Chest</h2>
+
       <%= render partial: "shared/menu", collection: @user.menus.where(part: "Chest").order(training_date: :desc) %>
+
     <!--/area--></div>
     <div id="arms" class="area">
       <h2>Arms</h2>
@@ -50,5 +52,12 @@
       <%= render partial: "shared/menu", collection: @user.menus.where(part: "Other").order(training_date: :desc) %>
     <!--/area--></div>
 <!--wrapper--></div>
+
+<div class="chart">
+<!--canvas id="myChart"></canvas-->
+</div>
+
+
+
 </div>
 <%= render "shared/footer" %>
