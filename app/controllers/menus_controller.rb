@@ -1,8 +1,6 @@
 class MenusController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :show]
 
-
-
   def index
     @user = current_user
     @menus = Menu.all.order(created_at: :desc).includes(:user)
@@ -12,8 +10,9 @@ class MenusController < ApplicationController
     @user = current_user
     @form = Form::MenuCollection.new
     @form.part = params[:part]
-    redirect_to root_path unless @form.part == 'Chest' || @form.part == 'Arms' || @form.part == 'Abs' || @form.part == 'Back' || @form.part == 'Legs' || @form.part == 'Shoulders' || @form.part == 'Aerobic' || @form.part == 'Other'
-    
+    unless @form.part == 'Chest' || @form.part == 'Arms' || @form.part == 'Abs' || @form.part == 'Back' || @form.part == 'Legs' || @form.part == 'Shoulders' || @form.part == 'Aerobic' || @form.part == 'Other'
+      redirect_to root_path
+    end
   end
 
   def create
@@ -27,7 +26,7 @@ class MenusController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_path if (@user.id != current_user.id)
+    redirect_to root_path if @user.id != current_user.id
   end
 
   private
@@ -38,7 +37,6 @@ class MenusController < ApplicationController
   end
 
   def root_item
-    redirect_to root_path if (@item.user_id != current_user.id)
+    redirect_to root_path if @item.user_id != current_user.id
   end
-
 end

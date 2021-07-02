@@ -7,5 +7,5 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :menus
   mount_uploader :image, ImageUploader
 
-  validates :nickname, presence: true,length: { maximum: 12 }
+  validates :nickname, presence: true, length: { maximum: 12 }
 end

@@ -1,6 +1,6 @@
 class Form::MenuCollection < Form::Base
   FORM_COUNT = 5
-  attr_accessor :menus, :user_id, :part, :rm,:training,:rep
+  attr_accessor :menus, :user_id, :part, :rm, :training, :rep
 
   def initialize(attributes = {})
     super attributes
@@ -12,11 +12,10 @@ class Form::MenuCollection < Form::Base
   end
 
   def save
-
     Menu.transaction do
-      self.menus.map do |menu|
+      menus.map do |menu|
         if menu.present?
-        menu.save 
+          menu.save
         else
           render :new
         end
